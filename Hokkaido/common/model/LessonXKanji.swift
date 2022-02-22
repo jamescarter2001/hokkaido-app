@@ -7,11 +7,13 @@
 
 import Foundation
 
-struct LessonXKanji : Codable {
+struct LessonXKanji : Identifiable, Codable {
+    let id : Int
     let lesson : Lesson
     let kanji : [Kanji]
     
-    init(lesson: Lesson, kanji: [Kanji]) {
+    init(id : Int, lesson: Lesson, kanji: [Kanji]) {
+        self.id = id
         self.lesson = lesson
         self.kanji = kanji
     }

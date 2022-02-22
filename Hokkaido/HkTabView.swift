@@ -20,6 +20,10 @@ struct HkTabView: View {
                     Image(systemName: "pencil")
                     Text("Lessons")
                 }
+            TestView().tabItem {
+                Image(systemName: "exclamationmark.triangle")
+                Text("Debug")
+            }
         }
     }
 }

@@ -26,6 +26,6 @@ struct LessonDetailView: View {
 
 struct LessonDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonDetailView(lxk: LoadTestData(name: "Lesson 1", symbol: "目")).previewLayout(.sizeThatFits).preferredColorScheme(.dark)
+        LessonDetailView(lxk: HkDebug.LoadTestData(name: "Lesson 1", symbol: "目")).previewLayout(.sizeThatFits).preferredColorScheme(.dark)
     }
 }

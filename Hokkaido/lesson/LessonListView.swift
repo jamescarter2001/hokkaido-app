@@ -13,19 +13,17 @@ struct LessonListView: View {
     @State var lessonXKanjis : [LessonXKanji] = []
     var body: some View {
         ZStack {
-            if (lessonXKanjis.count > 0) {
-                List {
-                    ForEach((0...lessonXKanjis.count-1), id: \.self) { i in
-                        NavigationLink(destination: LessonDetailView(lxk: lessonXKanjis[i])) {
-                            LessonListItemView( lessonXKanji: lessonXKanjis[i])
+            List(lessonXKanjis) { lxk in
+                        NavigationLink(destination: LessonDetailView(lxk: lxk)) {
+                            HStack {
+                                LessonListItemView(lessonXKanji: lxk)
+                            }
                         }
-                    }
                 }.listStyle(.plain)
-            } else {
-                ProgressView()
-            }
         }.onAppear() {
+            if (self.lessonXKanjis.isEmpty) {
             lessonService.requestLessons(withCompletion: onRequest, endpoint: "/lesson")
+            }
         }
     }
     private func onRequest(response: [LessonXKanji]) -> Void {
@@ -33,8 +31,8 @@ struct LessonListView: View {
     }
 }
 
-struct TestView_Previews: PreviewProvider {
+struct LessonListView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonListView(lessonXKanjis: []).preferredColorScheme(.dark)
+        LessonListView(lessonXKanjis: [HkDebug.LoadTestData(name: "AAAA", symbol: "日")]).preferredColorScheme(.dark)
     }
 }
