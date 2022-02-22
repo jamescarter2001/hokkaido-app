@@ -7,22 +7,22 @@
 
 import SwiftUI
 
-struct KanjiIconView: View {
-    let kanji : String
+struct IconView: View {
+    let symbol : String
     let label : String
     
     var body: some View {
         VStack(spacing: 0) {
-            Text(kanji).font(.system(size: 45))
+            Text(symbol).font(.system(size: 40))
             if (label != "") {
                 Text(label)
             }
-        }.frame(width: 75, height: 75).clipped()
+        }
     }
 }
 
 struct KanjiIconView_Previews: PreviewProvider {
     static var previews: some View {
-        KanjiIconView(kanji: "木", label: "Hello").previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
+        IconView(symbol: "木", label: "Hello").previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
     }
 }

@@ -14,13 +14,13 @@ class QueryService<T : Codable> {
         self.data = []
     }
     
-    func requestLessons(withCompletion completion: @escaping ([T]) -> Void, endpoint: String) -> Void {
-        let urlPath = String(format: "http://192.168.0.30:8080%@", endpoint)
+    func requestLessons(withCompletion completion: @escaping ([T], Bool) -> Void, endpoint: String) -> Void {
+        let urlPath = String(format: "http://localhost:8080%@", endpoint)
         
         let url = URL(string: urlPath)!
         let task = URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) -> Void in
             guard let data = data else {
-                DispatchQueue.main.async {completion(self.data)}
+                DispatchQueue.main.async {completion(self.data, true)}
                 return
             }
             do {
@@ -28,7 +28,7 @@ class QueryService<T : Codable> {
                 let messages = try decoder.decode([T].self, from: data)
 
                 self.data = messages
-                DispatchQueue.main.async {completion(self.data)}
+                DispatchQueue.main.async {completion(self.data, false)}
                 return
             } catch DecodingError.dataCorrupted(let context) {
                 print(context)

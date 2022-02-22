@@ -10,10 +10,34 @@ import SwiftUI
 struct LessonContainerView: View {
     let lessonService : LessonService = LessonService()
     
+    @State var lessonXKanjis : [LessonXKanji] = []
+    @State var loading = true
+    @State var error = false
+    
     var body: some View {
         NavigationView {
-                LessonListView()
+            VStack {
+                if (error) {
+                    ConnectionErrorView()
+                } else if (loading) {
+                    ProgressView()
+                } else {
+                    LessonListView(lessonXKanjis: lessonXKanjis)
+                }
             }.navigationTitle("Lessons")
+        }.navigationViewStyle(StackNavigationViewStyle()).onAppear() {
+            lessonService.requestLessons(withCompletion: onRequest, endpoint: "/lesson")
+        }
+    }
+    
+    private func onRequest(response: [LessonXKanji], error: Bool) -> Void {
+        if (self.lessonXKanjis.isEmpty && error) {
+            self.error = true
+        } else {
+            self.error = false
+        }
+        self.lessonXKanjis = response
+        self.loading = false
     }
 }
 

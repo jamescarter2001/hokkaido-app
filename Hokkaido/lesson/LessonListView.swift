@@ -8,26 +8,18 @@
 import SwiftUI
 
 struct LessonListView: View {
-    let lessonService : LessonService = LessonService()
-    
-    @State var lessonXKanjis : [LessonXKanji] = []
+    let lessonXKanjis : [LessonXKanji]
     var body: some View {
         ZStack {
             List(lessonXKanjis) { lxk in
                         NavigationLink(destination: LessonDetailView(lxk: lxk)) {
-                            HStack {
-                                LessonListItemView(lessonXKanji: lxk)
-                            }
+                            LessonListItemView(lessonXKanji: lxk)
                         }
                 }.listStyle(.plain)
-        }.onAppear() {
-            if (self.lessonXKanjis.isEmpty) {
-            lessonService.requestLessons(withCompletion: onRequest, endpoint: "/lesson")
-            }
         }
-    }
-    private func onRequest(response: [LessonXKanji]) -> Void {
-        lessonXKanjis = response
+        NavigationLink(destination: EmptyView()) {
+            EmptyView()
+        }
     }
 }
 
