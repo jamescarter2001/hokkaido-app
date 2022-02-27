@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct LessonContainerView: View {
-    let lessonService : LessonService = LessonService()
-    
-    @State var lessonXKanjis : [LessonXKanji] = []
-    @State var loading = true
+    @EnvironmentObject var lessonKanjiData : LessonData
+    @State var loading = false
     @State var error = false
     
     var body: some View {
@@ -22,23 +20,26 @@ struct LessonContainerView: View {
                 } else if (loading) {
                     ProgressView()
                 } else {
-                    LessonListView(lessonXKanjis: lessonXKanjis)
+                    LessonListView(lessonXKanjis: lessonKanjiData.data)
                 }
             }.navigationTitle("Lessons")
         }.navigationViewStyle(StackNavigationViewStyle()).onAppear() {
-            lessonService.requestLessons(withCompletion: onRequest, endpoint: "/lesson")
+            /*lessonService.request(withCompletion: onRequest, endpoint: "/lesson")*/
         }
     }
     
-    private func onRequest(response: [LessonXKanji], error: Bool) -> Void {
+    /*private func onRequest(response: [LessonXKanji], error: Bool) -> Void {
         if (self.lessonXKanjis.isEmpty && error) {
             self.error = true
         } else {
             self.error = false
         }
-        self.lessonXKanjis = response
-        self.loading = false
-    }
+        
+        if (self.lessonXKanjis != response) {
+            self.lessonXKanjis = response
+            self.loading = false
+        }
+    }*/
 }
 
 struct LessonContainerView_Previews: PreviewProvider {

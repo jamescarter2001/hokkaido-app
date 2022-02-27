@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Kanji : Identifiable, Codable {
+struct Kanji : Identifiable, Codable, Equatable {
     let id : Int64
     let symbol: String
     let name : String

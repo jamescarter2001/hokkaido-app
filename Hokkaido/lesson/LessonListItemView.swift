@@ -12,7 +12,7 @@ struct LessonListItemView: View {
     
     var body: some View {
         HStack {
-            IconView(symbol: lessonXKanji.kanji.first?.symbol ?? "", label: "").frame(width: 75, height: 75)
+            IconView(size: 35, number: "", symbol: lessonXKanji.kanji.first?.symbol ?? "", label: "").frame(width: 75, height: 75)
             VStack(alignment: .leading) {
                 Text(lessonXKanji.lesson.name)
                 Text(GenerateKanjiString(kanji:lessonXKanji.kanji)).foregroundColor(.gray)

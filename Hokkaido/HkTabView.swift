@@ -8,23 +8,30 @@
 import SwiftUI
 
 struct HkTabView: View {
+    @StateObject var kanji : KanjiData = KanjiData()
+    @StateObject var lessonXKanjis : LessonData = LessonData()
     var body: some View {
         TabView {
-            HomeContainerView()
+            /*HomeContainerView()
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
+                }*/
+            KanjiContainerView().environmentObject(kanji)
+                .tabItem() {
+                    Image(systemName: "magnifyingglass")
+                    Text("Kanji")
                 }
-            LessonContainerView()
+            LessonContainerView().environmentObject(lessonXKanjis)
                 .tabItem {
                     Image(systemName: "pencil")
                     Text("Lessons")
                 }
-            TestView().tabItem {
+            /*TestView().environmentObject(kanji).tabItem {
                 Image(systemName: "exclamationmark.triangle")
                 Text("Debug")
-            }
-        }
+            }*/
+        }.accentColor(.red)
     }
 }
 

@@ -10,17 +10,34 @@ import SwiftUI
 struct LessonDetailView: View {
     let lxk : LessonXKanji
     
-    var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    
+    @State var presentFlashcards = false
     var body: some View {
-        VStack {
-            ScrollView {
-                LazyVGrid(columns: gridItemLayout) {
-                    ForEach(lxk.kanji) { k in
-                        IconView(symbol: k.symbol, label: k.name).frame(width: 75, height: 75).clipped()
+        ScrollView {
+            LazyVGrid(columns: gridItemLayout) {
+                ForEach(lxk.kanji) { k in
+                    ZStack {
+                        IconView(size: 35, number: String(k.id), symbol: k.symbol, label: k.name).frame(width: 70, height: 100).clipped()
+                        NavigationLink(destination: KanjiDetailView(kanji: k).navigationTitle(k.name)) {
+                            RoundedRectangle(cornerRadius: 5).accentColor(.gray).opacity(0.2)
+                        }
                     }
                 }
+            }.padding(10).toolbar {
+                Button("Flashcards") {
+                    self.presentFlashcards.toggle()
+                }
             }
-        }.navigationTitle(lxk.lesson.name)
+        }.navigationTitle(lxk.lesson.name).popover(isPresented: $presentFlashcards) {
+            VStack {
+                FlashcardView(kanji: lxk.kanji.shuffled(), closeCallback: onClosedButtonPressed)
+            }.accentColor(.red)
+        }
+    }
+    
+    private func onClosedButtonPressed() {
+        self.presentFlashcards = false
     }
 }
 

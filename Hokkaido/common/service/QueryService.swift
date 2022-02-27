@@ -14,11 +14,13 @@ class QueryService<T : Codable> {
         self.data = []
     }
     
-    func requestLessons(withCompletion completion: @escaping ([T], Bool) -> Void, endpoint: String) -> Void {
-        let urlPath = String(format: "http://localhost:8080%@", endpoint)
+    func request(withCompletion completion: @escaping ([T], Bool) -> Void, endpoint: String) -> Void {
+        let urlPath = String(format: "http://192.168.0.30:8080%@", endpoint)
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = 10
         
         let url = URL(string: urlPath)!
-        let task = URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) -> Void in
+        let task = URLSession(configuration: configuration).dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) -> Void in
             guard let data = data else {
                 DispatchQueue.main.async {completion(self.data, true)}
                 return

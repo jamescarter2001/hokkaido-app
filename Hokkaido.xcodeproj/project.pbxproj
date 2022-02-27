@@ -7,13 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A11E99727C65F57005FDD93 /* KanjiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A11E99627C65F57005FDD93 /* KanjiData.swift */; };
+		1A11E99B27C670D1005FDD93 /* LessonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A11E99A27C670D1005FDD93 /* LessonData.swift */; };
+		1A11E99D27C670F6005FDD93 /* ObservableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A11E99C27C670F6005FDD93 /* ObservableData.swift */; };
+		1A11E9A127C6750E005FDD93 /* lessons.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A11E9A027C6750E005FDD93 /* lessons.json */; };
+		1A11E9A327C68165005FDD93 /* KanjiDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A11E9A227C68165005FDD93 /* KanjiDetailView.swift */; };
+		1A11E9A527C69BEE005FDD93 /* TitledCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A11E9A427C69BEE005FDD93 /* TitledCellView.swift */; };
+		1A11E9A927C6B30F005FDD93 /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A11E9A827C6B30F005FDD93 /* FlashcardView.swift */; };
 		1A1F3B8127C2F6F00064A648 /* LessonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F3B8027C2F6F00064A648 /* LessonService.swift */; };
+		1A5F0EEC27C6515E007CED57 /* kanji.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A5F0EEB27C6515E007CED57 /* kanji.json */; };
 		1A6E6DF327C3C766001E7337 /* LessonContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E6DF227C3C766001E7337 /* LessonContainerView.swift */; };
 		1A6E6DF527C3C86D001E7337 /* HkTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E6DF427C3C86D001E7337 /* HkTabView.swift */; };
 		1A6E6DF827C3DB05001E7337 /* QueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E6DF727C3DB05001E7337 /* QueryService.swift */; };
 		1A6E6DFB27C3E311001E7337 /* HomeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E6DFA27C3E311001E7337 /* HomeContainerView.swift */; };
 		1A6E6DFD27C3E331001E7337 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E6DFC27C3E331001E7337 /* HomeView.swift */; };
 		1A6E6DFF27C3EE85001E7337 /* LessonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E6DFE27C3EE85001E7337 /* LessonDetailView.swift */; };
+		1AB950D227CA4D5900FB4954 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB950D127CA4D5900FB4954 /* DrawView.swift */; };
+		1AB950D427CA4F5E00FB4954 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB950D327CA4F5E00FB4954 /* Line.swift */; };
+		1AB950D727CA54FB00FB4954 /* DrawingEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB950D627CA54FB00FB4954 /* DrawingEngine.swift */; };
 		1AD1CA9727C2A87F007A33EC /* HokkaidoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD1CA9627C2A87F007A33EC /* HokkaidoApp.swift */; };
 		1AD1CA9927C2A87F007A33EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD1CA9827C2A87F007A33EC /* ContentView.swift */; };
 		1AD1CA9B27C2A87F007A33EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AD1CA9A27C2A87F007A33EC /* Assets.xcassets */; };
@@ -28,16 +39,30 @@
 		1AF6188F27C41558005AA4EC /* TestView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6188E27C41558005AA4EC /* TestView2.swift */; };
 		1AF6189327C51E67005AA4EC /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6189227C51E67005AA4EC /* Debug.swift */; };
 		1AF6189527C54AA1005AA4EC /* ConnectionErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6189427C54AA1005AA4EC /* ConnectionErrorView.swift */; };
+		1AF6189827C58475005AA4EC /* KanjiContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6189727C58475005AA4EC /* KanjiContainerView.swift */; };
+		1AF6189A27C584F2005AA4EC /* KanjiListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6189927C584F2005AA4EC /* KanjiListView.swift */; };
+		1AF6189C27C58A94005AA4EC /* KanjiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6189B27C58A94005AA4EC /* KanjiService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A11E99627C65F57005FDD93 /* KanjiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiData.swift; sourceTree = "<group>"; };
+		1A11E99A27C670D1005FDD93 /* LessonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonData.swift; sourceTree = "<group>"; };
+		1A11E99C27C670F6005FDD93 /* ObservableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableData.swift; sourceTree = "<group>"; };
+		1A11E9A027C6750E005FDD93 /* lessons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lessons.json; sourceTree = "<group>"; };
+		1A11E9A227C68165005FDD93 /* KanjiDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiDetailView.swift; sourceTree = "<group>"; };
+		1A11E9A427C69BEE005FDD93 /* TitledCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledCellView.swift; sourceTree = "<group>"; };
+		1A11E9A827C6B30F005FDD93 /* FlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardView.swift; sourceTree = "<group>"; };
 		1A1F3B8027C2F6F00064A648 /* LessonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonService.swift; sourceTree = "<group>"; };
+		1A5F0EEB27C6515E007CED57 /* kanji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = kanji.json; sourceTree = "<group>"; };
 		1A6E6DF227C3C766001E7337 /* LessonContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonContainerView.swift; sourceTree = "<group>"; };
 		1A6E6DF427C3C86D001E7337 /* HkTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HkTabView.swift; sourceTree = "<group>"; };
 		1A6E6DF727C3DB05001E7337 /* QueryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryService.swift; sourceTree = "<group>"; };
 		1A6E6DFA27C3E311001E7337 /* HomeContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerView.swift; sourceTree = "<group>"; };
 		1A6E6DFC27C3E331001E7337 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1A6E6DFE27C3EE85001E7337 /* LessonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDetailView.swift; sourceTree = "<group>"; };
+		1AB950D127CA4D5900FB4954 /* DrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
+		1AB950D327CA4F5E00FB4954 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		1AB950D627CA54FB00FB4954 /* DrawingEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingEngine.swift; sourceTree = "<group>"; };
 		1AD1CA9327C2A87F007A33EC /* Hokkaido.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hokkaido.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AD1CA9627C2A87F007A33EC /* HokkaidoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokkaidoApp.swift; sourceTree = "<group>"; };
 		1AD1CA9827C2A87F007A33EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +78,9 @@
 		1AF6188E27C41558005AA4EC /* TestView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView2.swift; sourceTree = "<group>"; };
 		1AF6189227C51E67005AA4EC /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		1AF6189427C54AA1005AA4EC /* ConnectionErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionErrorView.swift; sourceTree = "<group>"; };
+		1AF6189727C58475005AA4EC /* KanjiContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiContainerView.swift; sourceTree = "<group>"; };
+		1AF6189927C584F2005AA4EC /* KanjiListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiListView.swift; sourceTree = "<group>"; };
+		1AF6189B27C58A94005AA4EC /* KanjiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +94,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A11E99E27C67235005FDD93 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				1A11E99C27C670F6005FDD93 /* ObservableData.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		1A11E99F27C67240005FDD93 /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				1AF6189227C51E67005AA4EC /* Debug.swift */,
+				1AF6188C27C41458005AA4EC /* TestView.swift */,
+				1AF6188E27C41558005AA4EC /* TestView2.swift */,
+			);
+			path = debug;
+			sourceTree = "<group>";
+		};
 		1A1F3B7C27C2F1C50064A648 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +136,14 @@
 			path = service;
 			sourceTree = "<group>";
 		};
+		1AB950D527CA54EC00FB4954 /* engine */ = {
+			isa = PBXGroup;
+			children = (
+				1AB950D627CA54FB00FB4954 /* DrawingEngine.swift */,
+			);
+			path = engine;
+			sourceTree = "<group>";
+		};
 		1AD1CA8A27C2A87F007A33EC = {
 			isa = PBXGroup;
 			children = (
@@ -109,17 +163,18 @@
 		1AD1CA9527C2A87F007A33EC /* Hokkaido */ = {
 			isa = PBXGroup;
 			children = (
+				1A5F0EEB27C6515E007CED57 /* kanji.json */,
+				1A11E9A027C6750E005FDD93 /* lessons.json */,
+				1AD1CAA427C2A8D8007A33EC /* common */,
+				1AF6189627C58465005AA4EC /* kanji */,
 				1A6E6DF627C3CA00001E7337 /* home */,
 				1A1F3B7C27C2F1C50064A648 /* vendor */,
 				1AD1CAB527C2CF7F007A33EC /* lesson */,
-				1AD1CAA427C2A8D8007A33EC /* common */,
 				1AD1CA9627C2A87F007A33EC /* HokkaidoApp.swift */,
 				1AD1CA9827C2A87F007A33EC /* ContentView.swift */,
 				1A6E6DF427C3C86D001E7337 /* HkTabView.swift */,
 				1AD1CA9A27C2A87F007A33EC /* Assets.xcassets */,
 				1AD1CA9C27C2A87F007A33EC /* Preview Content */,
-				1AF6188C27C41458005AA4EC /* TestView.swift */,
-				1AF6188E27C41558005AA4EC /* TestView2.swift */,
 			);
 			path = Hokkaido;
 			sourceTree = "<group>";
@@ -135,10 +190,12 @@
 		1AD1CAA427C2A8D8007A33EC /* common */ = {
 			isa = PBXGroup;
 			children = (
+				1AB950D527CA54EC00FB4954 /* engine */,
+				1A11E99F27C67240005FDD93 /* debug */,
+				1A11E99E27C67235005FDD93 /* data */,
 				1A6E6DF927C3E0E3001E7337 /* service */,
 				1AD1CAAC27C2ABDE007A33EC /* view */,
 				1AD1CAA527C2A8DF007A33EC /* model */,
-				1AF6189227C51E67005AA4EC /* Debug.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -149,6 +206,7 @@
 				1AD1CAA627C2A8EF007A33EC /* Kanji.swift */,
 				1AD1CAA827C2AA8C007A33EC /* Lesson.swift */,
 				1AD1CAAA27C2AB39007A33EC /* LessonXKanji.swift */,
+				1AB950D327CA4F5E00FB4954 /* Line.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -158,6 +216,8 @@
 			children = (
 				1AD1CAB327C2B270007A33EC /* IconView.swift */,
 				1AF6189427C54AA1005AA4EC /* ConnectionErrorView.swift */,
+				1A11E9A427C69BEE005FDD93 /* TitledCellView.swift */,
+				1AB950D127CA4D5900FB4954 /* DrawView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -170,8 +230,22 @@
 				1A1F3B8027C2F6F00064A648 /* LessonService.swift */,
 				1A6E6DF227C3C766001E7337 /* LessonContainerView.swift */,
 				1A6E6DFE27C3EE85001E7337 /* LessonDetailView.swift */,
+				1A11E99A27C670D1005FDD93 /* LessonData.swift */,
+				1A11E9A827C6B30F005FDD93 /* FlashcardView.swift */,
 			);
 			path = lesson;
+			sourceTree = "<group>";
+		};
+		1AF6189627C58465005AA4EC /* kanji */ = {
+			isa = PBXGroup;
+			children = (
+				1AF6189727C58475005AA4EC /* KanjiContainerView.swift */,
+				1AF6189927C584F2005AA4EC /* KanjiListView.swift */,
+				1AF6189B27C58A94005AA4EC /* KanjiService.swift */,
+				1A11E99627C65F57005FDD93 /* KanjiData.swift */,
+				1A11E9A227C68165005FDD93 /* KanjiDetailView.swift */,
+			);
+			path = kanji;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,8 +310,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A5F0EEC27C6515E007CED57 /* kanji.json in Resources */,
 				1AD1CA9E27C2A87F007A33EC /* Preview Assets.xcassets in Resources */,
 				1AD1CA9B27C2A87F007A33EC /* Assets.xcassets in Resources */,
+				1A11E9A127C6750E005FDD93 /* lessons.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,24 +325,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A6E6DF527C3C86D001E7337 /* HkTabView.swift in Sources */,
+				1A11E99B27C670D1005FDD93 /* LessonData.swift in Sources */,
 				1A6E6DFD27C3E331001E7337 /* HomeView.swift in Sources */,
 				1AD1CAB027C2AD6B007A33EC /* LessonListView.swift in Sources */,
+				1A11E9A527C69BEE005FDD93 /* TitledCellView.swift in Sources */,
+				1A11E9A927C6B30F005FDD93 /* FlashcardView.swift in Sources */,
 				1A6E6DFF27C3EE85001E7337 /* LessonDetailView.swift in Sources */,
 				1AF6188D27C41458005AA4EC /* TestView.swift in Sources */,
+				1AF6189C27C58A94005AA4EC /* KanjiService.swift in Sources */,
+				1AF6189A27C584F2005AA4EC /* KanjiListView.swift in Sources */,
 				1AD1CAAB27C2AB39007A33EC /* LessonXKanji.swift in Sources */,
+				1AF6189827C58475005AA4EC /* KanjiContainerView.swift in Sources */,
 				1AD1CA9927C2A87F007A33EC /* ContentView.swift in Sources */,
 				1A6E6DF827C3DB05001E7337 /* QueryService.swift in Sources */,
 				1AF6188F27C41558005AA4EC /* TestView2.swift in Sources */,
 				1AD1CA9727C2A87F007A33EC /* HokkaidoApp.swift in Sources */,
+				1AB950D727CA54FB00FB4954 /* DrawingEngine.swift in Sources */,
 				1A1F3B8127C2F6F00064A648 /* LessonService.swift in Sources */,
 				1AD1CAAE27C2AC27007A33EC /* LessonListItemView.swift in Sources */,
 				1AD1CAB427C2B270007A33EC /* IconView.swift in Sources */,
 				1AF6189327C51E67005AA4EC /* Debug.swift in Sources */,
+				1A11E99D27C670F6005FDD93 /* ObservableData.swift in Sources */,
+				1AB950D427CA4F5E00FB4954 /* Line.swift in Sources */,
 				1AD1CAA727C2A8EF007A33EC /* Kanji.swift in Sources */,
 				1AF6189527C54AA1005AA4EC /* ConnectionErrorView.swift in Sources */,
+				1A11E99727C65F57005FDD93 /* KanjiData.swift in Sources */,
 				1A6E6DFB27C3E311001E7337 /* HomeContainerView.swift in Sources */,
 				1A6E6DF327C3C766001E7337 /* LessonContainerView.swift in Sources */,
+				1AB950D227CA4D5900FB4954 /* DrawView.swift in Sources */,
 				1AD1CAA927C2AA8C007A33EC /* Lesson.swift in Sources */,
+				1A11E9A327C68165005FDD93 /* KanjiDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

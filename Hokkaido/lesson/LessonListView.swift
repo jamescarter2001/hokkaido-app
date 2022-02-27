@@ -10,13 +10,14 @@ import SwiftUI
 struct LessonListView: View {
     let lessonXKanjis : [LessonXKanji]
     var body: some View {
-        ZStack {
             List(lessonXKanjis) { lxk in
-                        NavigationLink(destination: LessonDetailView(lxk: lxk)) {
-                            LessonListItemView(lessonXKanji: lxk)
-                        }
+                ZStack(alignment: .leading) {
+                    LessonListItemView(lessonXKanji: lxk)
+                    NavigationLink(destination: LessonDetailView(lxk: lxk)) {
+                        EmptyView()
+                    }.opacity(0)
+                }
                 }.listStyle(.plain)
-        }
         NavigationLink(destination: EmptyView()) {
             EmptyView()
         }
