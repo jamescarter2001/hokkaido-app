@@ -15,17 +15,17 @@ struct FlashcardView: View {
     @State var index : Int = 0
     @State var lines : [Line] = []
     var body: some View {
-        VStack {
-            HStack {
+        VStack(spacing: 5) {
+            /*HStack {
                 Spacer()
                 Button {
                     closeCallback()
                 } label: {
                     Image(systemName: "xmark")
                 }.font(.system(size: 20)).padding(30)
-            }
-            Text(String(format: "%d / %d", index+1, kanji.count)).foregroundColor(.gray)
-            Text(showKanji ? kanji[index].symbol : kanji[index].name).font(.system(size: showKanji ? 150 : 50)).frame(height: 150)
+            }*/
+            Text(String(format: "%d / %d", index+1, kanji.count)).foregroundColor(.gray).padding()
+            Text(showKanji ? kanji[index].symbol : kanji[index].name).font(.system(size: showKanji ? 120 : 40)).frame(height: 110)
             Spacer()
             HStack {
                 Button("Clear") {
@@ -51,8 +51,9 @@ struct FlashcardView: View {
                     self.index-=1
                     self.resetCard()
                 }) {
-                    Text("Previous")                            .frame(maxWidth: 130, maxHeight: 40, alignment: .leading).padding(.leading, 30)
-                }.disabled(index == 0)
+                    Text("Previous").padding()
+                    Spacer()
+                }.disabled(index == 0).frame(width: 110)
                 Spacer()
                 /*Button("Flip") {
                  showKanji.toggle()
@@ -60,15 +61,15 @@ struct FlashcardView: View {
                 Button(action: {
                     self.showKanji.toggle()}) {
                         Text("Flip")
-                            .frame(maxWidth: 130, maxHeight: 40)
-                    }
+                    }.padding().frame(width: 110)
                 Spacer()
                 Button(action: {
                     self.index+=1
                     self.resetCard()
                 }) {
-                    Text("Next").frame(maxWidth: 130, maxHeight: 40, alignment: .trailing).padding(.trailing, 30)
-                }.disabled((index == kanji.count-1)).frame(width: 130, height: 40)
+                    Spacer()
+                    Text("Next").padding()
+                }.disabled((index == kanji.count-1)).frame(width: 110)
             }.frame(height: 90)
         }
     }

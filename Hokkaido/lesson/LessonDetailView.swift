@@ -25,8 +25,8 @@ struct LessonDetailView: View {
                     }
                 }
             }.padding(10).toolbar {
-                Button("Flashcards") {
-                    self.presentFlashcards.toggle()
+                NavigationLink(destination: FlashcardView(kanji: lxk.kanji.shuffled(), closeCallback: onClosedButtonPressed).navigationBarTitleDisplayMode(.inline)) {
+                    Text("Flashcards")
                 }
             }
         }.navigationTitle(lxk.lesson.name).popover(isPresented: $presentFlashcards) {
