@@ -8,22 +8,21 @@
 import SwiftUI
 
 struct FlashcardView: View {
-    let kanji : [Kanji]
+    @State var kanji : [Kanji]
+    @State var shuffled: Bool
     let closeCallback : (() -> Void)
     
-    @State var showKanji = false
+    @State var showKanji: Bool = false
     @State var index : Int = 0
     @State var lines : [Line] = []
+    
+    init(kanji: [Kanji], shuffled: Bool, closeCallback: @escaping () -> Void) {
+        self.kanji = kanji
+        self.shuffled = shuffled
+        self.closeCallback = closeCallback
+    }
     var body: some View {
         VStack(spacing: 5) {
-            /*HStack {
-                Spacer()
-                Button {
-                    closeCallback()
-                } label: {
-                    Image(systemName: "xmark")
-                }.font(.system(size: 20)).padding(30)
-            }*/
             Text(String(format: "%d / %d", index+1, kanji.count)).foregroundColor(.gray).padding()
             Text(showKanji ? kanji[index].symbol : kanji[index].name).font(.system(size: showKanji ? 120 : 40)).frame(height: 110)
             Spacer()
@@ -55,9 +54,6 @@ struct FlashcardView: View {
                     Spacer()
                 }.disabled(index == 0).frame(width: 110)
                 Spacer()
-                /*Button("Flip") {
-                 showKanji.toggle()
-                 }.padding(40).frame(width: 130, height: 40)*/
                 Button(action: {
                     self.showKanji.toggle()}) {
                         Text("Flip")
@@ -71,6 +67,10 @@ struct FlashcardView: View {
                     Text("Next").padding()
                 }.disabled((index == kanji.count-1)).frame(width: 110)
             }.frame(height: 90)
+        }.onAppear {
+            if (shuffled) {
+                kanji = kanji.shuffled()
+            }
         }
     }
     private func clearArea() {
@@ -88,7 +88,7 @@ struct FlashcardView: View {
 
 struct FlashcardView_Previews: PreviewProvider {
     static var previews: some View {
-        FlashcardView(kanji: [HkDebug.DummyKanji1()], closeCallback: {
+        FlashcardView(kanji: [HkDebug.DummyKanji1()], shuffled: false, closeCallback: {
             print("Closed")
         })
     }

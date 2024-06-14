@@ -25,14 +25,10 @@ struct LessonDetailView: View {
                     }
                 }
             }.padding(10).toolbar {
-                NavigationLink(destination: FlashcardView(kanji: lxk.kanji.shuffled(), closeCallback: onClosedButtonPressed).navigationBarTitleDisplayMode(.inline)) {
+                NavigationLink(destination: FlashcardView(kanji: lxk.kanji, shuffled: true, closeCallback: onClosedButtonPressed).navigationBarTitleDisplayMode(.inline)) {
                     Text("Flashcards")
                 }
             }
-        }.navigationTitle(lxk.lesson.name).popover(isPresented: $presentFlashcards) {
-            VStack {
-                FlashcardView(kanji: lxk.kanji.shuffled(), closeCallback: onClosedButtonPressed)
-            }.accentColor(.red)
         }
     }
     
